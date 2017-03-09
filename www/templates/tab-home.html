@@ -1,0 +1,21 @@
+<ion-view view-title="La Anonima">
+    <ion-content style="background: #FFF;" class="padding">
+        <div class="card">
+            <div class="item">
+                <button class="button button-block button-positive" ng-click="vm.scan()">
+                    <i class="icon ion-qr-scanner"></i>
+                    Escanear Producto
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="item item-divider">
+			<span> Resultados del Escaner</span>
+            </div>
+            <div class="item item-text-wrap">
+                {{vm.scanResults}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
