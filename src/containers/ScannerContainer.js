@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
 import Scanner from '../components/Scanner';
+import {getProduct} from '../api/products-api';
 
 class ScannerContainer extends Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class ScannerContainer extends Component {
 
     onScan(){
         console.log('button clicked');
-        //getData(); 
+        getProduct('1683238');
     }
 
     render(){
