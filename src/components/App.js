@@ -3,26 +3,14 @@ import React, {
 } from 'react';
 import logo from '../logo.svg';
 import './App.css';
-import Button from './button/Button';
+import ScannerContainer from '../containers/ScannerContainer';
 
-class App extends Component {
-
-    scanBarCode() {
-        debugger;
-
-    }
-    render() {
-        return (
-            <div className="App">
-        <div className="App-header">
+const App = () =>{ 
+    return (
+        <div className="App">
+            <ScannerContainer />
         </div>
-        <p className="App-intro">
-        <Button onClick={this.scanBarCode} text='scan code'/>
-
-        </p>
-      </div>
-        );
-    }
+    );
 }
 
 export default App;
