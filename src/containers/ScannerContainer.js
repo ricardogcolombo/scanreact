@@ -9,20 +9,26 @@ import {
 class ScannerContainer extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            value: null
+        }
     }
-
+    onChange(evt) {
+        this.state.value = evt.target.value
+    }
+    onManualScan() {
+        getProduct(this.state.value);
+        this.props.router.push('details');
+    }
     onScan() {
-    var _self = this;
+        var _self = this;
         console.log('button clicked');
-/* eslint-disable */
+        /* eslint-disable */
         cordova.plugins.barcodeScanner.scan(
             function(result) {
-                getProduct('1683238');
-                _self.props.router.push('details')
-                alert("We got a barcode\n" +
-                    "Result: " + result.text + "\n" +
-                    "Format: " + result.format + "\n" +
-                    "Cancelled: " + result.cancelled);
+                // TODO remove hardcode
+                getProduct(result.text || '1683238');
+                _self.props.router.push('details');
             },
             function(error) {
                 getProduct('1683238');
@@ -46,7 +52,7 @@ class ScannerContainer extends Component {
 
     render() {
         return (
-            <Scanner buttonText='scan code' onScan={this.onScan.bind(this)}/>
+            <Scanner buttonText='scan code' getButtonText='Buscar' onManualScan={this.onManualScan.bind(this)} onChange={this.onChange.bind(this)} inputPlaceholder="Ingrese el codigo manualmente" onScan={this.onScan.bind(this)}/>
         )
     }
 
