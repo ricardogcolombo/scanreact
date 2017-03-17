@@ -1,5 +1,9 @@
-import React, {Component} from 'react';
-import { connect } from 'react-redux';
+import React, {
+    Component
+} from 'react';
+import {
+    connect
+} from 'react-redux';
 import Details from '../components/Details';
 
 class DetailsContainer extends Component {
@@ -8,17 +12,17 @@ class DetailsContainer extends Component {
     }
 
     //componentDidMount(){
-        //getIncidents(); 
+    //getIncidents(); 
     //}
 
-    //onFooterClick (){
-        //this.props.router.push('incidentSubmission');
-    //}
+    onBackButtonPress() {
+        this.props.router.goBack();
+    }
 
-    render(){
-        return(
-            <Details product={ this.props.product } /> 
-        ) 
+    render() {
+        return (
+            <Details product={ this.props.product } onBackButtonPress={this.onBackButtonPress.bind(this)} />
+        )
     }
 
 }

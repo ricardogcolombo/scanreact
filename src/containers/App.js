@@ -9,14 +9,15 @@ import {
 
 import './App.css';
 
-class App extends Component {
+class AppC extends Component {
     render() {
         return (
             <div className="App">
+            <div className="Header">header</div>
                 {this.props.children}
             </div>
         );
     }
 };
 
-export default App
+export default AppC

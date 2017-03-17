@@ -25,9 +25,9 @@ import {
 ReactDOM.render(
     <Provider store={Store}>
         <Router history={hashHistory}>
-          <Route exact path="/" component={App}>
+          <Route path="/" component={App}>
             <IndexRoute component={ScannerContainer} />
-            <Route exact path="details" component={DetailsContainer} />
+            <Route path="details" component={DetailsContainer} />
           </Route>
         </Router>
  </Provider>,
