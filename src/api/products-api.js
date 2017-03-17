@@ -11,7 +11,8 @@ import {
 export function getProduct(id) {
     return axios.get('https://jqpb04e10511.us1.hana.ondemand.com/Backend-LA/articulos.xsjs?codart=' + id)
         .then(response => {
-            store.dispatch(getProductSuccess(response));
+            const product = response.data.articulos[0];
+            store.dispatch(getProductSuccess(product));
             return response;
         })
         .catch(err => console.log(err));

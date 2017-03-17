@@ -14,7 +14,10 @@ class ScannerContainer extends Component {
     onScan() {
         console.log('button clicked');
         getProduct('1683238');
-        this.props.router.push('details');
+        setTimeout(
+        
+        this.props.router.push('details'),4000
+        )
     }
 
     render() {
@@ -25,13 +28,13 @@ class ScannerContainer extends Component {
 
 }
 
-//const mapStateToProps = function(state) {
-//return {
-//config:{ 
-//incidents: state.config.incidents
-//}
-//};
-//}
+// const mapStateToProps = function(state) {
+    // return {
+        // config: {
+            // incidents: state.config.incidents
+        // }
+    // };
+// }
 
 export default ScannerContainer;
 

@@ -1,11 +1,11 @@
-import * as actions from '../actions/products-actions'
+import * as actions from '../actions/products-actions-types'
 
 const product = {}
 
-const productsReducer = function(state = product, action) {
+const productsReducer = function(state = {}, action) {
     switch (action.type) {
         case actions.GET_PRODUCT_SUCCESS:
-            return Object.assign({}, state, { product: product.data.articulos[0] }); 
+            return Object.assign({}, state,  action.product); 
         default: 
             return state;
     }

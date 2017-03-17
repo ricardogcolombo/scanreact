@@ -9,7 +9,7 @@ import {
 
 import './App.css';
 
-class AppC extends Component {
+class App extends Component {
     render() {
         return (
             <div className="App">
@@ -20,4 +20,11 @@ class AppC extends Component {
     }
 };
 
-export default AppC
+const mapStateToProps = function(state) {
+    return {
+        product: state.product
+
+    };
+}
+
+export default connect(mapStateToProps)(App);

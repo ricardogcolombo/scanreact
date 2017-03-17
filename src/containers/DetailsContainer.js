@@ -5,16 +5,26 @@ import {
     connect
 } from 'react-redux';
 import Details from '../components/Details';
+import store from '../store';
 
 class DetailsContainer extends Component {
+
     constructor(props) {
         super(props);
+        this.state = {
+            product: null
+        }
     }
 
-    //componentDidMount(){
-    //getIncidents(); 
-    //}
+    componentDidMount() {
+        //getIncidents(); 
+    }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            product: nextProps.product
+        })
+    }
     onBackButtonPress() {
         this.props.router.goBack();
     }
@@ -26,10 +36,13 @@ class DetailsContainer extends Component {
     }
 
 }
+DetailsContainer.propTypes = {
+    product: React.PropTypes.object
+}
 
-const mapStateToProps = function(state) {
+const mapStateToProps = function(state, ownProps) {
     return {
-        product: state.productsState.product
+        product: state.product
 
     };
 }
