@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'Lato';
+  src: url("fonts/lato-regular.eot");
+  src: url("fonts/lato-regular.eot?#iefix") format("embedded-opentype"), url("fonts/lato-regular.woff2") format("woff2"), url("fonts/lato-regular.woff") format("woff"), url("fonts/lato-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Icomoon';
+  src: url("fonts/icomoon.eot");
+  src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+.Button, .App__content .manualScan .ManualButton, .App__content .ScanButton {
+  background-color: #0161c3;
+  color: white;
+  font-size: 15px;
+  border: none;
+  font-family: 'Lato';
+  padding: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
+  text-transform: uppercase; }
+
+.App {
+  text-align: center;
+  background-color: #FFF;
+  min-height: 100%;
+  font-family: 'Lato'; }
+
+.App__header {
+  background-color: #0161c3;
+  height: 0.5em;
+  padding: 20px;
+  font-size: 23px;
+  font-family: 'Lato';
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white; }
+
+.App__content {
+  padding: 5px;
+  padding-top: 25px; }
+
+.App__content .label {
+  font-family: 'Lato';
+  color: #45b1f1;
+  left: 0;
+  padding-bottom: 1px;
+  text-align: left;
+  font-size: 13px; }
+
+.App__content .manualScan {
+  width: 100%; }
+
+.App__content .manualScan .input {
+  float: left;
+  left: 0;
+  height: 2rem;
+  font-family: 'Lato';
+  font-size: 1rem;
+  border: 1px solid #45b1f1;
+  text-transform: uppercase;
+  padding: 10px;
+  padding-left: 5px;
+  width: 72%; }
+
+.App__content .manualScan .ManualButton {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 22%;
+  font-family: "Icomoon"; }
+
+.App__content .manualScan .ManualButton:before {
+  content: "\e986";
+  font-size: 22px; }
+
+.App__content .ScanButton {
+  position: absolute;
+  width: 100%;
+  height: 4em;
+  bottom: 0;
+  margin: 0;
+  left: 0; }
+
+.App__content .ScanButton:before {
+  font-family: "Icomoon";
+  content: '\e937';
+  font-size: 22px;
+  margin-right: 10px; }
+
+.App .logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.App-intro {
+  font-size: large; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }

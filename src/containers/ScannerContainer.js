@@ -52,7 +52,7 @@ class ScannerContainer extends Component {
 
     render() {
         return (
-            <Scanner buttonText='scan code' getButtonText='Buscar' onManualScan={this.onManualScan.bind(this)} onChange={this.onChange.bind(this)} inputPlaceholder="Ingrese el codigo manualmente" onScan={this.onScan.bind(this)}/>
+            <Scanner buttonText='Escanear Producto' onManualScan={this.onManualScan.bind(this)} onChange={this.onChange.bind(this)} inputPlaceholder="Ingrese el codigo de producto" onScan={this.onScan.bind(this)}/>
         )
     }
 

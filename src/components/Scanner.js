@@ -11,9 +11,12 @@ const Scanner = ({
 }) => {
     return (
         <div>
-        <input placeholder={inputPlaceholder} onChange={onChange}></input>
-        <Button onClick={onManualScan} text={getButtonText}/>
-        <Button onClick={onScan} text={buttonText}/>
+            <p className='label'>Producto</p>
+            <div className='manualScan'>
+                <input className='input' placeholder={inputPlaceholder} onChange={onChange}></input>
+                <Button className='ManualButton' onClick={onManualScan} text={getButtonText}/>
+            </div>
+            <Button className='ScanButton' onClick={onScan} text={buttonText}/>
         </div>
     )
 }

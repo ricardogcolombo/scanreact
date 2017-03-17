@@ -9,7 +9,7 @@ import {
  */
 
 export function getProduct(id) {
-    return axios.get('https://jqpb04e10511.us1.hana.ondemand.com/Backend-LA/articulos.xsjs?codart=' + id)
+    return axios.get('https://jqpb04e10511.us1.hana.ondemand.com/Backend-LA/articulos.xsjs?codean=' + id)
         .then(response => {
             const product = response.data.articulos[0];
             store.dispatch(getProductSuccess(product));
