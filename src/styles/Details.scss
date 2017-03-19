@@ -4,10 +4,21 @@
 
 .Details{
     &__mainInfo{
-        margin:10px;
-        // margin-bottom:10px;
-        padding:30px;
-        // height:230px;
+        /* Portrait and Landscape */
+        @media only screen
+        and (min-device-width: 768px)
+        and (max-device-width: 1024px)
+        and (-webkit-min-device-pixel-ratio: 1) {
+            margin:10px;
+            padding:30px;
+        }
+        /* Portrait and Landscape */
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 767px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+            margin:10px;
+        }
         overflow:hidden;
 
         &__productImage img{
@@ -27,24 +38,68 @@
             and (min-device-width: 320px)
             and (max-device-width: 767px)
             and (-webkit-min-device-pixel-ratio: 2) {
-                margin:auto;
+                width: 100px;
+                float: left;
             }
         }
         &__dataContainer{
-            float:right;
-            margin-right: 60px;
+            /* Portrait and Landscape */
+            @media only screen
+            and (min-device-width: 768px)
+            and (max-device-width: 1024px)
+            and (-webkit-min-device-pixel-ratio: 1) {
+                float:right;
+                margin-right: 60px;
+            }
+
+            /* Portrait and Landscape */
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 767px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+                float:right;
+            }
+
             .Field{
-                padding:10px;
-                width:250px;
-                height:50px;
-                margin:20px;
+                @media only screen
+                and (min-device-width: 768px)
+                and (max-device-width: 1024px)
+                and (-webkit-min-device-pixel-ratio: 1) {
+                    padding:10px;
+                    width:250px;
+                    height:50px;
+                    margin:20px;
+                }
+                /* Portrait and Landscape */
+                @media only screen
+                and (min-device-width: 320px)
+                and (max-device-width: 767px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                    padding:10px;
+                    width:150px;
+                    height:40px;
+                }
             }
         }
     }
     &__descripcion{
         margin:10px;
         margin-top: 0px;
-        height: 120px;
+
+        @media only screen
+        and (min-device-width: 768px)
+        and (max-device-width: 1024px)
+        and (-webkit-min-device-pixel-ratio: 1) {
+            height: 120px;
+        }
+        /* Portrait and Landscape */
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 767px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+            height: 100px;
+        }
+
         .value{
             border:1px solid $blue2;
             padding:20px;
@@ -60,10 +115,22 @@
         }
         &__titleForm{
             @include subTitle();
-            margin-top: 20px;
-            margin-bottom: 20px;
-            height: 50px;
+            margin-top: 0px;
+            margin-bottom: 10px;
             line-height: 1;
+            @media only screen
+            and (min-device-width: 768px)
+            and (max-device-width: 1024px)
+            and (-webkit-min-device-pixel-ratio: 1) {
+                height: 50px;
+            }
+            /* Portrait and Landscape */
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 767px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+                height: 30px;
+            }
         }
         &__textAreaTitle,
         &__titleLabel{

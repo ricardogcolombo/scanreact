@@ -2,6 +2,7 @@ import React, {
     Component
 } from 'react';
 import Scanner from '../components/Scanner';
+import List from '../components/List';
 import {
     getProduct
 } from '../api/products-api';
@@ -29,6 +30,7 @@ class ScannerContainer extends Component {
         this.navigateToDetails();
     }
     onScanError(error) {
+        // TODO create a popup
         alert("Scanning failed: " + error);
     }
     onScan() {
@@ -55,8 +57,12 @@ class ScannerContainer extends Component {
     }
 
     render() {
+        let items = (this.props.productList) ? this.props.productList.results : [];
         return (
+            <div>
+            <List items={items}/>
             <Scanner buttonText='Escanear Producto' onManualScan={this.onManualScan.bind(this)} onChange={this.onChange.bind(this)} inputPlaceholder="Ingrese el codigo de producto" onScan={this.onScan.bind(this)}/>
+        </div>
         )
     }
 

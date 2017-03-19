@@ -7,3 +7,9 @@ export function getProductSuccess(product) {
         product
     };
 }
+export function getProductListSuccess(productList) {
+    return {
+        type: types.GET_LIST_SUCCESS,
+        productList
+    };
+}

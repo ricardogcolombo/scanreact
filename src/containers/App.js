@@ -10,7 +10,14 @@ import {
 import '../styles/App.css';
 import Button from '../components/button/Button';
 
+import {
+    getProductList
+} from '../api/products-api';
+
 class App extends Component {
+    componentDidMount() {
+        getProductList();
+    }
     onBackButtonPress() {
         this.props.router.goBack();
     }
