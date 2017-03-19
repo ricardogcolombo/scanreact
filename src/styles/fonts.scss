@@ -1,0 +1,39 @@
+$fontsPath: "../../public/static/fonts";
+@font-face {
+    font-family: 'Lato';
+    src: url('#{$fontsPath}/lato-regular.eot');
+    src: url('#{$fontsPath}/lato-regular.eot?#iefix') format('embedded-opentype'),
+    url('#{$fontsPath}/lato-regular.woff2') format('woff2'),
+    url('#{$fontsPath}/lato-regular.woff') format('woff'),
+    url('#{$fontsPath}/lato-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Icomoon';
+    src: url('#{$fontsPath}/icomoon.eot');
+    src: url('#{$fontsPath}/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('#{$fontsPath}/icomoon.woff') format('woff'),
+    url('#{$fontsPath}/icomoon.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+// font sizes
+$titleSize: 53px;
+$subTitleSize: 33px;
+$labelSize:14px;
+$inputSize:14px;
+$iconSize:22px;
+$ButtonSize:15px;
+@mixin title(){
+    font-family:'Lato';
+    font-size:$titleSize;
+}
+@mixin labels(){
+    font-family:'Lato';
+    font-size:$labelSize;
+}
+@mixin subTitle(){
+    font-family:'Lato';
+    font-size:$subTitleSize;
+}

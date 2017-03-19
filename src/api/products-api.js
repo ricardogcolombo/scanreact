@@ -8,14 +8,20 @@ import {
  * Get all users
  */
 
-export function getProduct(id) {
+function getProductData(id) {
     return axios.get('https://jqpb04e10511.us1.hana.ondemand.com/Backend-LA/articulos.xsjs?codean=' + id)
-        .then(response => {
-            const product = response.data.articulos[0];
-            store.dispatch(getProductSuccess(product));
-            return response;
-        })
-        .catch(err => console.log(err));
+}
+
+function getProductImage() {
+    return axios.get('https://jqpb04e10511.us1.hana.ondemand.com/Backend-LA/imagenes.xsjs?imageID=LA02')
 }
 
 
+export function getProduct(id) {
+    return axios.all([getProductData(id), getProductImage()])
+        .then(axios.spread((productData, image) => {
+            const product = Object.assign({}, productData.data.articulos[0], image.data);
+            store.dispatch(getProductSuccess(product));
+        }))
+        .catch(err => console.log(err));
+}

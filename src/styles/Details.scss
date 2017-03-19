@@ -1,0 +1,35 @@
+@import 'colors.scss';
+@import 'fonts.scss';
+@import 'commons.scss';
+
+.Details{
+    padding:5px;
+    &__form{
+        background-color:$blue3;
+        margin: 30px;
+        &__title{
+            width:400px;
+        }
+        &__titleForm{
+            @include subTitle();
+        }
+        &__textAreaTitle,
+        &__titleLabel{
+            @include labels();
+            color:$blue1;
+        }
+
+        &__descripcion{
+            resize:none;
+            width:400px;
+        }
+        &__footer{
+            &__submitButton{
+                @extend .Button;
+                background-color:$blue1;
+                width: 150px;
+                height: 40px;
+            }
+        }
+    }
+}

@@ -6,6 +6,7 @@ import {
 } from 'react-redux';
 import Details from '../components/Details';
 import store from '../store';
+import '../styles/Details.css';
 
 class DetailsContainer extends Component {
 
@@ -25,13 +26,12 @@ class DetailsContainer extends Component {
             product: nextProps.product
         })
     }
-    onBackButtonPress() {
-        this.props.router.goBack();
+    submitForm() {
+        console.log("submit data");
     }
-
     render() {
         return (
-            <Details product={ this.props.product } onBackButtonPress={this.onBackButtonPress.bind(this)} />
+            <Details product={ this.props.product } onSubmitPress={this.submitForm.bind(this)} />
         )
     }
 

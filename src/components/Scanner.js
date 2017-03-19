@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Button from './button/Button';
 
 const Scanner = ({
@@ -7,7 +8,7 @@ const Scanner = ({
     onManualScan,
     inputPlaceholder,
     getButtonText,
-    onChange
+    onChange,
 }) => {
     return (
         <div>
@@ -18,7 +19,7 @@ const Scanner = ({
             </div>
             <Button className='ScanButton' onClick={onScan} text={buttonText}/>
         </div>
-    )
-}
+    );
+};
 
 export default Scanner;

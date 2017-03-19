@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'Lato';
-  src: url("fonts/lato-regular.eot");
-  src: url("fonts/lato-regular.eot?#iefix") format("embedded-opentype"), url("fonts/lato-regular.woff2") format("woff2"), url("fonts/lato-regular.woff") format("woff"), url("fonts/lato-regular.ttf") format("truetype");
+  src: url("../../public/static/fonts/lato-regular.eot");
+  src: url("../../public/static/fonts/lato-regular.eot?#iefix") format("embedded-opentype"), url("../../public/static/fonts/lato-regular.woff2") format("woff2"), url("../../public/static/fonts/lato-regular.woff") format("woff"), url("../../public/static/fonts/lato-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
   font-family: 'Icomoon';
-  src: url("fonts/icomoon.eot");
-  src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.ttf") format("truetype");
+  src: url("../../public/static/fonts/icomoon.eot");
+  src: url("../../public/static/fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../../public/static/fonts/icomoon.woff") format("woff"), url("../../public/static/fonts/icomoon.ttf") format("truetype");
   font-weight: 400;
   font-style: normal; }
 
-.Button, .App__content .manualScan .ManualButton, .App__content .ScanButton {
+.Button, .App__header__Backbutton, .App__content .manualScan .ManualButton, .App__content .ScanButton {
   background-color: #0161c3;
   color: white;
   font-size: 15px;
@@ -30,13 +30,31 @@
   font-family: 'Lato'; }
 
 .App__header {
-  background-color: #0161c3;
-  height: 0.5em;
-  padding: 20px;
-  font-size: 23px;
   font-family: 'Lato';
+  font-size: 53px;
+  background-color: #0161c3;
+  height: 40px;
+  padding: 20px;
+  padding-bottom: 10px;
   text-transform: uppercase;
   font-weight: bold;
+  color: white; }
+
+.App__header__title {
+  display: inline;
+  line-height: 1;
+  padding-top: 14px; }
+
+.App__header__Backbutton {
+  display: inline;
+  left: 0;
+  float: left;
+  line-height: 0.5; }
+
+.App__header__Backbutton:before {
+  content: "\ea38";
+  font-family: "Icomoon";
+  font-size: 43px;
   color: white; }
 
 .App__content {
@@ -45,11 +63,11 @@
 
 .App__content .label {
   font-family: 'Lato';
-  color: #45b1f1;
+  font-size: 14px;
+  color: #0161c3;
   left: 0;
   padding-bottom: 1px;
-  text-align: left;
-  font-size: 13px; }
+  text-align: left; }
 
 .App__content .manualScan {
   width: 100%; }
@@ -59,7 +77,7 @@
   left: 0;
   height: 2rem;
   font-family: 'Lato';
-  font-size: 1rem;
+  font-size: 14px;
   border: 1px solid #45b1f1;
   text-transform: uppercase;
   padding: 10px;
@@ -93,6 +111,9 @@
 .App .logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px; }
+
+.hidden {
+  display: none; }
 
 .App-intro {
   font-size: large; }

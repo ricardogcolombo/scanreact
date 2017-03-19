@@ -16,33 +16,37 @@ class ScannerContainer extends Component {
     onChange(evt) {
         this.state.value = evt.target.value
     }
+    navigateToDetails() {
+        this.props.router.push('details');
+    }
     onManualScan() {
         getProduct(this.state.value);
-        this.props.router.push('details');
+        this.navigateToDetails();
+    }
+    onScanSuccess(result) {
+        // TODO remove hardcode
+        getProduct(result.text || '1683238');
+        this.navigateToDetails();
+    }
+    onScanError(error) {
+        alert("Scanning failed: " + error);
     }
     onScan() {
         var _self = this;
         console.log('button clicked');
+
         /* eslint-disable */
         cordova.plugins.barcodeScanner.scan(
-            function(result) {
-                // TODO remove hardcode
-                getProduct(result.text || '1683238');
-                _self.props.router.push('details');
-            },
-            function(error) {
-                getProduct('1683238');
-                _self.props.router.push('details')
-                alert("Scanning failed: " + error);
-            }, {
-                preferFrontCamera: true, // iOS and Android
-                showFlipCameraButton: true, // iOS and Android
+            this.onScanSuccess.bind(this),
+            this.onScanError.bind(this), {
+                preferFrontCamera: false, // iOS and Android
+                showFlipCameraButton: false, // iOS and Android
                 showTorchButton: true, // iOS and Android
-                torchOn: true, // Android, launch with the torch switched on (if available)
-                prompt: "Place a barcode inside the scan area", // Android
-                resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+                torchOn: false, // Android, launch with the torch switched on (if available)
+                prompt: "Ponga el codigo de barra dentro de area del scanner", // Android
+                resultDisplayDuration: 100, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
                 formats: "QR_CODE,PDF_417,EAN_13,EAN", // default: all but PDF_417 and RSS_EXPANDED
-                orientation: "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+                orientation: "portrait", // Android only (portrait|landscape), default unset so it rotates with the device
                 disableAnimations: true, // iOS
                 disableSuccessBeep: false // iOS
             }

@@ -1,40 +1,7 @@
-// colors
-$blue1:#0161c3;
-$blue2:#45b1f1;
+@import 'colors.scss';
+@import 'fonts.scss';
+@import 'commons.scss';
 
-// font sizes
-$fontTitle: 23px;
-
-@font-face {
-    font-family: 'Lato';
-    src: url('fonts/lato-regular.eot');
-    src: url('fonts/lato-regular.eot?#iefix') format('embedded-opentype'),
-    url('fonts/lato-regular.woff2') format('woff2'),
-    url('fonts/lato-regular.woff') format('woff'),
-    url('fonts/lato-regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Icomoon';
-    src: url('fonts/icomoon.eot');
-    src: url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.woff') format('woff'),
-    url('fonts/icomoon.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-.Button{
-    background-color:$blue1;
-    color:white;
-    font-size:15px;
-    border:none;
-    font-family:'Lato';
-    padding:10px;
-    padding-left:3px;
-    padding-right:3px;
-    text-transform:uppercase;
-}
 
 .App {
     text-align: center;
@@ -42,25 +9,43 @@ $fontTitle: 23px;
     min-height:100%;
     font-family:'Lato';
     &__header {
+        @include title();
+
         background-color: $blue1;
-        height:0.5em;
+        height:40px;
         padding: 20px;
-        font-size:$fontTitle;
-        font-family:'Lato';
+        padding-bottom: 10px;
         text-transform:uppercase;
         font-weight:bold;
         color: white;
+        &__title{
+            display:inline;
+            line-height: 1;
+            padding-top:14px;
+        }
+        &__Backbutton{
+            @extend .Button;
+            display:inline;
+            left:0;
+            float:left;
+            line-height: 0.5;
+            &:before{
+                content:"\ea38";
+                font-family:"Icomoon";
+                font-size:43px;
+                color:white
+            }
+        }
     }
     &__content{
         padding:5px;
         padding-top:25px;
         .label{
-            font-family:'Lato';
-            color:$blue2;
+            @include labels();
+            color:$blue1;
             left:0;
             padding-bottom:1px;
             text-align:left;
-            font-size:13px;
         }
         .manualScan{
             width:100%;
@@ -69,7 +54,7 @@ $fontTitle: 23px;
                 left:0;
                 height: 2rem;
                 font-family:'Lato';
-                font-size:1rem;
+                font-size:$inputSize;
                 border:1px solid $blue2;
                 text-transform:uppercase;
                 padding:10px;
@@ -84,7 +69,7 @@ $fontTitle: 23px;
                 font-family:"Icomoon";
                 &:before{
                     content:"\e986";
-                    font-size:22px;
+                    font-size:$iconSize
                 }
             }
         }
@@ -99,7 +84,7 @@ $fontTitle: 23px;
             &:before{
                 font-family:"Icomoon";
                 content:'\e937';
-                font-size:22px;
+                font-size:$iconSize;
                 margin-right:10px;
             }
         }
@@ -110,8 +95,9 @@ $fontTitle: 23px;
     }
 }
 
-
-
+.hidden{
+    display:none;
+}
 
 .App-intro {
     font-size: large;

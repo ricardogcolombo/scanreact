@@ -1,7 +1,8 @@
 import React from 'react';
 import ListItem from './ListItem'
-const ListItem= ({
-   items 
+
+const ListItem = ({
+    items
 }) => {
     return (
         <div>
