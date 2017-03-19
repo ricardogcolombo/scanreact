@@ -76,7 +76,6 @@
 
         &__descripcion{
             @include inputText();
-            padding:5px;
             resize:none;
             width:100%;
             >.value{
@@ -84,13 +83,11 @@
                 height:30px;
             }
         }
-        &__footer{
-            padding-top:10px;
-            &__submitButton{
-                @extend .Button;
-                background-color:$blue1;
-                width: 100%;
-            }
+        &__submitButton{
+            @extend .Button;
+            margin-top:5px;
+            background-color:$blue1;
+            width: 101%;
         }
     }
 }
