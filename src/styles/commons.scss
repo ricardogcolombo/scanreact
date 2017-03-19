@@ -1,11 +1,13 @@
 @import 'colors.scss';
+@import 'fonts.scss';
+
+
 
 .Button{
+    @include buttonText();
     background-color:$blue1;
     color:white;
-    font-size:$ButtonSize;
     border:none;
-    font-family:'Lato';
     padding:10px;
     padding-left:3px;
     padding-right:3px;

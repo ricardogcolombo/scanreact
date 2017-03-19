@@ -3,32 +3,93 @@
 @import 'commons.scss';
 
 .Details{
-    padding:5px;
+    &__mainInfo{
+        margin:10px;
+        // margin-bottom:10px;
+        padding:30px;
+        // height:230px;
+        overflow:hidden;
+
+        &__productImage img{
+            width: 25%;
+            display: block;
+            /* Portrait and Landscape */
+            @media only screen
+            and (min-device-width: 768px)
+            and (max-device-width: 1024px)
+            and (-webkit-min-device-pixel-ratio: 1) {
+                margin: 20px;
+                margin-left: 50px;
+                float:left;
+            }
+            /* Portrait and Landscape */
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 767px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+                margin:auto;
+            }
+        }
+        &__dataContainer{
+            float:right;
+            margin-right: 60px;
+            .Field{
+                padding:10px;
+                width:250px;
+                height:50px;
+                margin:20px;
+            }
+        }
+    }
+    &__descripcion{
+        margin:10px;
+        margin-top: 0px;
+        height: 120px;
+        .value{
+            border:1px solid $blue2;
+            padding:20px;
+        }
+    }
     &__form{
         background-color:$blue3;
-        margin: 30px;
+        padding:20px;
+        margin: 10px;
         &__title{
-            width:400px;
+            @include inputText();
+            width:100%;
         }
         &__titleForm{
             @include subTitle();
+            margin-top: 20px;
+            margin-bottom: 20px;
+            height: 50px;
+            line-height: 1;
         }
         &__textAreaTitle,
         &__titleLabel{
             @include labels();
+            text-align:left;
+            margin-top:10px;
+            margin-bottom:10px;
             color:$blue1;
         }
 
         &__descripcion{
+            @include inputText();
+            padding:5px;
             resize:none;
-            width:400px;
+            width:100%;
+            >.value{
+                border:1px solid $blue2;
+                height:30px;
+            }
         }
         &__footer{
+            padding-top:10px;
             &__submitButton{
                 @extend .Button;
                 background-color:$blue1;
-                width: 150px;
-                height: 40px;
+                width: 100%;
             }
         }
     }

@@ -25,15 +25,79 @@ $labelSize:14px;
 $inputSize:14px;
 $iconSize:22px;
 $ButtonSize:15px;
+
+
+// font size Ipad
+$IpadtitleSize: 53px;
+$IpadlabelSize:25px;
+$IpadsubTitleSize: 43px;
+$IpadinputSize:27px;
+$IpadiconSize:52px;
+$IpadButtonSize:30px;
+
+
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+
 @mixin title(){
     font-family:'Lato';
-    font-size:$titleSize;
+    @media #{$tablet} {
+        font-size:$IpadtitleSize;
+    }
+    @media #{$desktop} {
+        font-size:$titleSize;
+    }
 }
 @mixin labels(){
     font-family:'Lato';
-    font-size:$labelSize;
+
+    @media #{$tablet} {
+        font-size:$IpadlabelSize;
+    }
+    @media #{$desktop} {
+        font-size:$labelSize;
+    }
 }
+
+@mixin inputText(){
+    font-family:'Lato';
+
+    @media #{$tablet} {
+        font-size:$IpadinputSize;
+    }
+    @media #{$desktop} {
+        font-size:$inputSize;
+    }
+}
+
 @mixin subTitle(){
     font-family:'Lato';
-    font-size:$subTitleSize;
+
+    @media #{$tablet} {
+        font-size:$IpadsubTitleSize;
+    }
+    @media #{$desktop} {
+        font-size:$subTitleSize;
+    }
+}
+
+@mixin buttonText(){
+    font-family:'Lato';
+    @media #{$tablet} {
+        font-size:$IpadButtonSize;
+    }
+    @media #{$desktop} {
+        font-size:$ButtonSize;
+    }
+}
+
+@mixin iconText(){
+    font-family:'icomoon';
+    @media #{$tablet} {
+        font-size:$IpadiconSize;
+    }
+    @media #{$desktop} {
+        font-size:$iconSize;
+    }
+
 }

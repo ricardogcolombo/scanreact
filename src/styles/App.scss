@@ -14,7 +14,6 @@
         background-color: $blue1;
         height:40px;
         padding: 20px;
-        padding-bottom: 10px;
         text-transform:uppercase;
         font-weight:bold;
         color: white;
@@ -30,35 +29,39 @@
             float:left;
             line-height: 0.5;
             &:before{
+                @include iconText();
                 content:"\ea38";
-                font-family:"Icomoon";
-                font-size:43px;
-                color:white
+                color:white;
             }
         }
     }
     &__content{
         padding:5px;
-        padding-top:25px;
+        padding-left: 15px;
         .label{
             @include labels();
             color:$blue1;
+            margin-bottom:1px;
             left:0;
             padding-bottom:1px;
             text-align:left;
+        }
+        .value{
+            margin-top:1px;
+            @include inputText();
+        
         }
         .manualScan{
             width:100%;
             .input{
                 float:left;
                 left:0;
-                height: 2rem;
-                font-family:'Lato';
-                font-size:$inputSize;
+                @include inputText();
                 border:1px solid $blue2;
                 text-transform:uppercase;
                 padding:10px;
                 padding-left:5px;
+                height: 55px;
                 width:72%;
             }
             .ManualButton{
@@ -66,10 +69,9 @@
                 padding-top:12px;
                 padding-bottom:12px;
                 width:22%;
-                font-family:"Icomoon";
                 &:before{
                     content:"\e986";
-                    font-size:$iconSize
+                    @include iconText();
                 }
             }
         }
@@ -82,10 +84,9 @@
             margin:0;
             left:0;
             &:before{
-                font-family:"Icomoon";
+                @include iconText();
                 content:'\e937';
-                font-size:$iconSize;
-                margin-right:10px;
+                margin-right:15px;
             }
         }
     }
