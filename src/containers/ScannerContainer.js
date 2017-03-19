@@ -11,7 +11,11 @@ class ScannerContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: null
+            value: null,
+            trakingClick: null,
+            targetElement: null,
+            touchStartX: null,
+            touchStartY: null
         }
     }
     onChange(evt) {
@@ -32,6 +36,50 @@ class ScannerContainer extends Component {
     onScanError(error) {
         // TODO create a popup
         alert("Scanning failed: " + error);
+    }
+
+    onTouchCancelScan() {
+        console.log("cancelScan");
+        this.setState({
+            trackingClick: false,
+            targetElement: null
+        });
+    }
+    onTouchEndScan() {
+
+        console.log("endscan");
+        this.setState({
+            trackingClick: false
+        })
+        this.onScan();
+    }
+    onTouchMoveScan() {
+        console.log("movescan");
+
+        if (!this.props.trackingClick) {
+            return true;
+        }
+
+        // If the touch has moved, cancel the click tracking
+        if (this.props.targetElement !== event.target ||
+            (Math.abs(event.changedTouches[0].pageX - this.propstouchStartX) > this.props.touchBoundary ||
+                (Math.abs(event.changedTouches[0].pageY - this.props.touchStartY) > this.props.touchBoundary))) {
+            this.setState({
+                trackingClick: false,
+                targetElement: null
+            })
+        }
+
+    }
+    onTouchStartScan() {
+        console.log("startScan");
+        this.setState({
+            trackingClick: true,
+            targetElement: event.target,
+            touchStartX: event.targetTouches[0].pageX,
+            touchStartY: event.targetTouches[0].pageY
+        })
+        return true;
     }
     onScan() {
         var _self = this;
@@ -61,7 +109,15 @@ class ScannerContainer extends Component {
         return (
             <div>
             <List items={items}/>
-            <Scanner buttonText='Escanear Producto' onManualScan={this.onManualScan.bind(this)} onChange={this.onChange.bind(this)} inputPlaceholder="Ingrese el codigo de producto" onScan={this.onScan.bind(this)}/>
+            <Scanner
+            buttonText='Escanear Producto'
+            onManualScan={this.onManualScan.bind(this)}
+            onChange={this.onChange.bind(this)}
+            inputPlaceholder="Ingrese el codigo de producto"
+            onTouchCancelScan={this.onTouchCancelScan.bind(this)}
+            onTouchEndScan={this.onTouchEndScan.bind(this)}
+            onTouchMoveScan={this.onTouchMoveScan.bind(this)}
+            onTouchStartScan={this.onTouchStartScan.bind(this)}/>
         </div>
         )
     }

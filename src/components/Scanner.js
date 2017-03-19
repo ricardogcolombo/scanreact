@@ -4,11 +4,15 @@ import Button from './button/Button';
 
 const Scanner = ({
     buttonText,
-    onScan,
     onManualScan,
     inputPlaceholder,
     getButtonText,
     onChange,
+
+    onTouchCancelScan,
+    onTouchEndScan,
+    onTouchMoveScan,
+    onTouchStartScan
 }) => {
     return (
         <div>
@@ -16,8 +20,14 @@ const Scanner = ({
             <div className='manualScan'>
                 <input className='input' placeholder={inputPlaceholder} onChange={onChange}></input>
                 <Button className='ManualButton' onClick={onManualScan} text={getButtonText}/>
+
             </div>
-            <Button className='ScanButton' onClick={onScan} text={buttonText}/>
+            <Button className='ScanButton'
+                text={buttonText}
+                onTouchCancel={onTouchCancelScan}
+                onTouchEnd={onTouchEndScan}
+                onTouchMove={onTouchMoveScan}
+                onTouchStart={onTouchStartScan}/>
         </div>
     );
 };
