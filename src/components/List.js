@@ -5,14 +5,19 @@ const List = ({
     items,
     onItemClick
 }) => {
-
-    var listItems = items.map((item,index) => 
-        <ListItem onItemClick={onItemClick} text={item.descripcion} />
-    )
+    let listItems = items.map((item, index) =>
+        <ListItem 
+            key={item.codean} 
+            onItemClick={()=>onItemClick(item.codean)} 
+            {...item}
+            />
+    );
     return (
-        <div className='List'>
+        <div>
         <p className='ListHeader'>Productos a revisar</p>
+        <ul className='List'>
             {listItems}
+        </ul>
         </div>
     )
 }

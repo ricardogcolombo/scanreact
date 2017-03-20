@@ -6,6 +6,7 @@ import {
     connect
 } from 'react-redux';
 import Scanner from '../components/Scanner';
+import ListItemContainer from './ListContainer';
 import {
     getProduct
 } from '../api/products-api';
@@ -30,12 +31,14 @@ class ScannerContainer extends Component {
         this.props.router.push('details');
     }
     onManualScan() {
-        getProduct(this.state.value);
-        this.navigateToDetails();
+        this.goToDetails(this.state.value)
     }
     onScanSuccess(result) {
         // TODO remove hardcode
-        getProduct(result.text || '1683238');
+        this.goToDetails(result.text || '1683238')
+    }
+    goToDetails(id) {
+        getProduct(id);
         this.navigateToDetails();
     }
     onScanError(error) {
@@ -112,12 +115,10 @@ class ScannerContainer extends Component {
     }
 
     render() {
-        let items = (this.props.config.productList.results) ? this.props.config.productList.results : [];
         return (
             <div>
             <Scanner
             buttonText='Escanear Producto'
-            items={items}
             onItemClick={this.onSelectedItem.bind(this)}
             onManualScan={this.onManualScan.bind(this)}
             onChange={this.onChange.bind(this)}
@@ -126,6 +127,8 @@ class ScannerContainer extends Component {
             onTouchEndScan={this.onTouchEndScan.bind(this)}
             onTouchMoveScan={this.onTouchMoveScan.bind(this)}
             onTouchStartScan={this.onTouchStartScan.bind(this)}/>
+
+            <ListItemContainer  onItemSelected={this.goToDetails.bind(this)}/>
         </div>
         )
     }

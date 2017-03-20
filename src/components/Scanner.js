@@ -24,7 +24,6 @@ const Scanner = ({
                 <Button className='ManualButton' onClick={onManualScan} text={getButtonText}/>
 
             </div>
-            <List items={items} onItemClick={onItemClick}/>
             <Button className='ScanButton'
                 text={buttonText}
                 onTouchCancel={onTouchCancelScan}
