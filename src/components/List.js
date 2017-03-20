@@ -1,16 +1,17 @@
 import React from 'react';
 import ListItem from './ListItem'
 
-const List= ({
-    items
+const List = ({
+    items,
+    onItemClick
 }) => {
 
-    var listItems = items.map((item)=>{
-    debugger;
-        <ListItem  />
-    })
+    var listItems = items.map((item,index) => 
+        <ListItem onItemClick={onItemClick} text={item.descripcion} />
+    )
     return (
-        <div>
+        <div className='List'>
+        <p className='ListHeader'>Productos a revisar</p>
             {listItems}
         </div>
     )

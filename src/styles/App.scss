@@ -86,6 +86,30 @@
                 }
             }
         }
+        .List{
+            margin-top:30px;
+            .ListHeader{
+                @include subTitle();
+            }
+            .ListItem{
+                width:97%;
+                background-color:$blue2;
+                border:1px solid $blue2;
+                @include inputText();
+                margin-top:10px;
+                margin-bottom:10px;
+                padding-top:10px;
+                padding-bottom:10px;
+
+                &:after{
+                    @include iconText();
+                    content:"\e9ad";
+                    float:right;
+                    margin-right:10px;
+                    color:$blue1;
+                }
+            }
+        }
         .ScanButton{
             @extend .Button;
             position:absolute;

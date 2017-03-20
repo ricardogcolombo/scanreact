@@ -1,11 +1,11 @@
 import React from 'react';
 
 const ListItem= ({
-    text
+    text,
+    onItemClick
 }) => {
     return (
-        <div>text
-        </div>
+        <div onClick={onItemClick} className='ListItem'>{text}</div>
     )
 }
 

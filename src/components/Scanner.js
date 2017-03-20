@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Button from './button/Button';
+import List from '../components/List';
 
 const Scanner = ({
     buttonText,
@@ -8,7 +9,8 @@ const Scanner = ({
     inputPlaceholder,
     getButtonText,
     onChange,
-
+    items,
+    onItemClick,
     onTouchCancelScan,
     onTouchEndScan,
     onTouchMoveScan,
@@ -22,6 +24,7 @@ const Scanner = ({
                 <Button className='ManualButton' onClick={onManualScan} text={getButtonText}/>
 
             </div>
+            <List items={items} onItemClick={onItemClick}/>
             <Button className='ScanButton'
                 text={buttonText}
                 onTouchCancel={onTouchCancelScan}

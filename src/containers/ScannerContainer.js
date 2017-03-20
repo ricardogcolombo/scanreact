@@ -1,11 +1,16 @@
 import React, {
     Component
 } from 'react';
+
+import {
+    connect
+} from 'react-redux';
 import Scanner from '../components/Scanner';
-import List from '../components/List';
 import {
     getProduct
 } from '../api/products-api';
+
+import store from '../store';
 
 class ScannerContainer extends Component {
     constructor(props) {
@@ -37,7 +42,6 @@ class ScannerContainer extends Component {
         // TODO create a popup
         alert("Scanning failed: " + error);
     }
-
     onTouchCancelScan() {
         console.log("cancelScan");
         this.setState({
@@ -103,14 +107,18 @@ class ScannerContainer extends Component {
         );
         /* eslint-enable*/
     }
+    onSelectedItem(evt) {
+        console.log("item selected ");
+    }
 
     render() {
-        let items = (this.props.productList) ? this.props.productList.results : [];
+        let items = (this.props.config.productList.results) ? this.props.config.productList.results : [];
         return (
             <div>
-            <List items={items}/>
             <Scanner
             buttonText='Escanear Producto'
+            items={items}
+            onItemClick={this.onSelectedItem.bind(this)}
             onManualScan={this.onManualScan.bind(this)}
             onChange={this.onChange.bind(this)}
             inputPlaceholder="Ingrese el codigo de producto"
@@ -124,14 +132,15 @@ class ScannerContainer extends Component {
 
 }
 
-// const mapStateToProps = function(state) {
-// return {
-// config: {
-// incidents: state.config.incidents
-// }
-// };
-// }
+const mapStateToProps = function(state) {
+    return {
+        config: {
+            product: state.product,
+            productList: state.productList
+        }
+    };
+}
 
-export default ScannerContainer;
+// export default ScannerContainer;
 
-//export default connect(mapStateToProps)(IncidentSubmissionContainer);
+export default connect(mapStateToProps)(ScannerContainer);

@@ -13,7 +13,8 @@ class DetailsContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            product: null
+            product: null,
+            productList:null
         }
     }
 
