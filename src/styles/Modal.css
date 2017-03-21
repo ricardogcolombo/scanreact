@@ -35,18 +35,15 @@
   padding-left: 3px;
   padding-right: 3px;
   text-transform: uppercase; }
-
-@media (min-width: 320px) and (max-width: 767px) {
-  .Button, .modal .modal-form .button {
-    font-size: 20px; } }
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .Button, .modal .modal-form .button {
-    font-size: 30px; } }
-
-@media (min-width: 1025px) {
-  .Button, .modal .modal-form .button {
-    font-size: 15px; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .Button, .modal .modal-form .button {
+      font-size: 20px; } }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .Button, .modal .modal-form .button {
+      font-size: 30px; } }
+  @media (min-width: 1025px) {
+    .Button, .modal .modal-form .button {
+      font-size: 15px; } }
 
 .modal {
   background-color: rgba(69, 177, 241, 0.5);
@@ -55,70 +52,57 @@
   right: 0;
   left: 0;
   bottom: 0; }
-
-.modal .modal-form {
-  height: 60%;
-  margin: 30px;
-  padding: 10px;
-  background-color: white; }
-
-.modal .modal-form .title {
-  font-family: 'Lato';
-  text-align: left;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #0161c3; }
-
-@media (min-width: 320px) and (max-width: 767px) {
-  .modal .modal-form .title {
-    font-size: 12px; } }
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .modal .modal-form .title {
-    font-size: 25px; } }
-
-@media (min-width: 1025px) {
-  .modal .modal-form .title {
-    font-size: 14px; } }
-
-.modal .modal-form .input {
-  font-family: 'Lato';
-  width: 100%; }
-
-@media (min-width: 320px) and (max-width: 767px) {
-  .modal .modal-form .input {
-    font-size: 15px; } }
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .modal .modal-form .input {
-    font-size: 27px; } }
-
-@media (min-width: 1025px) {
-  .modal .modal-form .input {
-    font-size: 14px; } }
-
-.modal .modal-form .description {
-  font-family: 'Lato';
-  resize: none;
-  width: 100%; }
-
-@media (min-width: 320px) and (max-width: 767px) {
-  .modal .modal-form .description {
-    font-size: 15px; } }
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .modal .modal-form .description {
-    font-size: 27px; } }
-
-@media (min-width: 1025px) {
-  .modal .modal-form .description {
-    font-size: 14px; } }
-
-.modal .modal-form .description > .value {
-  border: 1px solid #45b1f1;
-  height: 30px; }
-
-.modal .modal-form .button {
-  margin-top: 5px;
-  background-color: #0161c3;
-  width: 101%; }
+  .modal .modal-form {
+    height: 60%;
+    margin: 30px;
+    padding: 10px;
+    background-color: white; }
+    .modal .modal-form .title {
+      font-family: 'Lato';
+      text-align: left;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: #0161c3; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .modal .modal-form .title {
+          font-size: 12px; } }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .modal .modal-form .title {
+          font-size: 25px; } }
+      @media (min-width: 1025px) {
+        .modal .modal-form .title {
+          font-size: 14px; } }
+    .modal .modal-form .input {
+      font-family: 'Lato';
+      width: 100%; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .modal .modal-form .input {
+          font-size: 15px; } }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .modal .modal-form .input {
+          font-size: 27px; } }
+      @media (min-width: 1025px) {
+        .modal .modal-form .input {
+          font-size: 14px; } }
+    .modal .modal-form .description {
+      font-family: 'Lato';
+      resize: none;
+      width: 100%; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .modal .modal-form .description {
+          font-size: 15px; } }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .modal .modal-form .description {
+          font-size: 27px; } }
+      @media (min-width: 1025px) {
+        .modal .modal-form .description {
+          font-size: 14px; } }
+      .modal .modal-form .description > .value {
+        border: 1px solid #45b1f1;
+        height: 30px; }
+    .modal .modal-form .button {
+      margin-top: 5px;
+      background-color: #0161c3;
+      width: 101%; }
+    .modal .modal-form > .content {
+      padding: 10px; }

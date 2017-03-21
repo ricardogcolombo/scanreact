@@ -47,6 +47,10 @@ $modal-background:$blue2;
             background-color:$blue1;
             width: 101%;
         }
+
+        >.content{
+            padding:10px; 
+        }
     }
 
 }
