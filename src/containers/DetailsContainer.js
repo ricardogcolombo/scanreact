@@ -5,7 +5,9 @@ import {
     connect
 } from 'react-redux';
 import Details from '../components/Details';
+import ModalContainer from './ModalContainer';
 import store from '../store';
+import {openMessageModal} from '../actions/modal-actions';
 import '../styles/Details.css';
 
 class DetailsContainer extends Component {
@@ -16,6 +18,7 @@ class DetailsContainer extends Component {
             product: null,
             productList:null
         }
+        this.openSendMessageModal= this.openSendMessageModal.bind(this);
     }
 
     componentDidMount() {
@@ -30,9 +33,19 @@ class DetailsContainer extends Component {
     submitForm() {
         console.log("submit data");
     }
+
+    openSendMessageModal(){
+        console.log('helloou');
+        store.dispatch(openMessageModal()); 
+    }
+
     render() {
         return (
-            <Details product={ this.props.product } onSubmitPress={this.submitForm.bind(this)} />
+            <div>
+                <Details product={ this.props.product } onSubmitPress={this.submitForm.bind(this)} 
+                        onSendMessage={this.openSendMessageModal} />
+                <ModalContainer/>
+            </div>
         )
     }
 
