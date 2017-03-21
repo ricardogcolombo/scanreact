@@ -1,5 +1,4 @@
 node_modules/
-hexaScanHybrid/
 src/styles/App.css
 src/styles/Details.css
 src/styles/colors.css
@@ -7,3 +6,4 @@ src/styles/commons.css
 src/styles/index.css
 src/styles/fonts.css
 src/styles/List.css
+src/components/LoadIndicator/LoadIndicator.css
