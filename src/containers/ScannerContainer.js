@@ -8,7 +8,7 @@ import {
 
 import store from '../store';
 
-import Scanner from '../components/Scanner';
+import Scanner from '../components/Scanner/Scanner';
 import ListItemContainer from './ListContainer';
 
 import {
@@ -119,6 +119,7 @@ class ScannerContainer extends Component {
         );
         /* eslint-enable*/
     }
+
     onSelectedItem(evt) {
         console.log("item selected ");
     }

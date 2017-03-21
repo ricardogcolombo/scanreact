@@ -7,8 +7,8 @@ import {
 } from 'react-redux';
 
 import '../styles/App.css';
-import Button from '../components/button/Button';
-import LoadIndicator from '../components/LoadIndicator';
+import Button from '../components/Button/Button';
+import LoadIndicator from '../components/LoadIndicator/LoadIndicator';
 
 import {
     getProductList

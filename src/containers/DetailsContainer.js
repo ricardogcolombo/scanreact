@@ -4,7 +4,7 @@ import React, {
 import {
     connect
 } from 'react-redux';
-import Details from '../components/Details';
+import Details from '../components/Details/Details';
 import '../styles/Details.css';
 
 // set initial state here

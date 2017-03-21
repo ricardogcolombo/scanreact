@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from './button/Button';
-import Field from './Field';
+import Button from '../Button/Button';
+import Field from '../Field/Field';
 
 const Details = ({
     product,
