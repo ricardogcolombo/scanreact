@@ -8,6 +8,7 @@ import {
 
 import List from "../components/List";
 import store from '../store';
+import '../styles/List.css';
 
 
 class ListContainer extends Component {
