@@ -1,6 +1,4 @@
 import * as actions from '../actions/products-actions-types'
-const productList = {}
-
 
 const productListReducer = function(state = {}, action) {
     switch (action.type) {

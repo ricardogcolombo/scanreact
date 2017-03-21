@@ -7,7 +7,6 @@ import {
 } from 'react-redux';
 
 import List from "../components/List";
-import store from '../store';
 import '../styles/List.css';
 
 

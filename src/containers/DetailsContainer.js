@@ -5,7 +5,6 @@ import {
     connect
 } from 'react-redux';
 import Details from '../components/Details';
-import store from '../store';
 import '../styles/Details.css';
 
 // set initial state here

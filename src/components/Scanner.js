@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Button from './button/Button';
-import List from '../components/List';
 
 const Scanner = ({
     buttonText,

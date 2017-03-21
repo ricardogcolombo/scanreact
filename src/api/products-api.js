@@ -5,6 +5,9 @@ import {
     getProductListSuccess
 } from '../actions/products-actions';
 
+import{
+hideLoadIndicator
+} from '../actions/loadIndicator-actions';
 /**
  * Get all users
  */
@@ -23,6 +26,7 @@ export function getProduct(id) {
         .then(axios.spread((productData, image) => {
             const product = Object.assign({}, productData.data.articulos[0], image.data);
             store.dispatch(getProductSuccess(product));
+            store.dispatch(hideLoadIndicator());
         }))
         .catch(err => console.log(err));
 }
