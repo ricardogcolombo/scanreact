@@ -4,6 +4,11 @@ import React, {
 import {
     connect
 } from 'react-redux';
+
+import {
+    clearProduct
+} from '../actions/products-actions';
+import store from '../store'
 import Details from '../components/Details/Details';
 import '../styles/Details.css';
 
@@ -33,7 +38,7 @@ class DetailsContainer extends Component {
     }
 
     componentWillUnmount() {
-        this.setState(initialState);
+        store.dispatch(clearProduct());
     }
 
     submitForm() {

@@ -7,6 +7,12 @@ export function getProductSuccess(product) {
         product
     };
 }
+export function clearProduct() {
+    return {
+        type: types.CLEAR_PRODUCT
+    }
+}
+
 export function getProductListSuccess(productList) {
     return {
         type: types.GET_LIST_SUCCESS,
