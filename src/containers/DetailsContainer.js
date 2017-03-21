@@ -8,18 +8,23 @@ import Details from '../components/Details';
 import store from '../store';
 import '../styles/Details.css';
 
+// set initial state here
+const initialState = {
+    product: {
+        descripcion: '',
+        pic: '',
+        marca: '',
+        codart: ''
+    },
+    productList: []
+};
+
+
 class DetailsContainer extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            product: null,
-            productList:null
-        }
-    }
-
-    componentDidMount() {
-        //getIncidents(); 
+        this.state = initialState;
     }
 
     componentWillReceiveProps(nextProps) {
@@ -27,16 +32,23 @@ class DetailsContainer extends Component {
             product: nextProps.product
         })
     }
+
+    componentWillUnmount() {
+        this.setState(initialState);
+    }
+
     submitForm() {
         console.log("submit data");
     }
+
     render() {
+
         return (
-            <Details product={ this.props.product } onSubmitPress={this.submitForm.bind(this)} />
+            <Details {...this.state} onSubmitPress={this.submitForm.bind(this)} />
         )
     }
-
 }
+
 DetailsContainer.propTypes = {
     product: React.PropTypes.object
 }

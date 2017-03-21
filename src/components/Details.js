@@ -7,6 +7,7 @@ const Details = ({
     onSubmitPress
 }) => {
 
+    // FIXME: remove this and check on detailscontainer the state
     let imgSrc = (product.pic) ? 'data:image/jpeg;base64,' + product.pic : "";
 
     return (
