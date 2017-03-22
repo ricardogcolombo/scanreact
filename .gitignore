@@ -1,5 +1,5 @@
 node_modules/
-hexaScanHybrid/www/
+hexaScanHybrid/
 src/styles/App.css
 src/styles/Details.css
 src/styles/colors.css
