@@ -15,8 +15,8 @@ import {
     getProduct
 } from '../api/products-api';
 
-import{
-showLoadIndicator
+import {
+    showLoadIndicator
 } from '../actions/loadIndicator-actions';
 
 class ScannerContainer extends Component {
@@ -43,8 +43,10 @@ class ScannerContainer extends Component {
         this.goToDetails(this.state.value)
     }
     onScanSuccess(result) {
-        // TODO remove hardcode
-        this.goToDetails(result.text || '1683238')
+        if (!result.cancelled) {
+            // TODO check if is successfull the get from backend or show message
+            this.goToDetails(result.text)
+        }
     }
     goToDetails(id) {
         getProduct(id);
