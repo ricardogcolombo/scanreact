@@ -6,8 +6,8 @@ import {
     connect
 } from 'react-redux';
 
-import List from "../components/List";
-import store from '../store';
+import List from "../components/List/List";
+import '../styles/List.css';
 
 
 class ListContainer extends Component {

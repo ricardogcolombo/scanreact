@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './button/Button';
+import Button from './Button/Button';
 import '../styles/Modal.css';
 
 const ContentModal = ({title, inputTitle, textAreaTitle, submitButtonText, onSubmitPress}) =>{

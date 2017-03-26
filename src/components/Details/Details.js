@@ -1,9 +1,10 @@
 import React from 'react';
-import Button from './button/Button';
-import Field from './Field';
+import Button from '../Button/Button';
+import Field from '../Field/Field';
 
 const Details = ({ product, onSubmitPress, onSendMessage}) => {
 
+    // FIXME: remove this and check on detailscontainer the state
     let imgSrc = (product.pic) ? 'data:image/jpeg;base64,' + product.pic : "";
 
     return (

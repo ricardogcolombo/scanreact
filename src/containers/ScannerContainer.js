@@ -5,13 +5,19 @@ import React, {
 import {
     connect
 } from 'react-redux';
-import Scanner from '../components/Scanner';
+
+import store from '../store';
+
+import Scanner from '../components/Scanner/Scanner';
 import ListItemContainer from './ListContainer';
+
 import {
     getProduct
 } from '../api/products-api';
 
-import store from '../store';
+import{
+showLoadIndicator
+} from '../actions/loadIndicator-actions';
 
 class ScannerContainer extends Component {
     constructor(props) {
@@ -25,9 +31,12 @@ class ScannerContainer extends Component {
         }
     }
     onChange(evt) {
-        this.state.value = evt.target.value
+        this.setState({
+            value: evt.target.value
+        })
     }
     navigateToDetails() {
+        store.dispatch(showLoadIndicator());
         this.props.router.push('details');
     }
     onManualScan() {
@@ -110,6 +119,7 @@ class ScannerContainer extends Component {
         );
         /* eslint-enable*/
     }
+
     onSelectedItem(evt) {
         console.log("item selected ");
     }

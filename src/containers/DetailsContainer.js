@@ -4,11 +4,26 @@ import React, {
 import {
     connect
 } from 'react-redux';
-import Details from '../components/Details';
+import {
+    clearProduct
+} from '../actions/products-actions';
+import store from '../store'
+import Details from '../components/Details/Details';
 import ModalContainer from './ModalContainer';
-import store from '../store';
 import {openMessageModal} from '../actions/modal-actions';
 import '../styles/Details.css';
+
+// set initial state here
+const initialState = {
+    product: {
+        descripcion: '',
+        pic: '',
+        marca: '',
+        codart: ''
+    },
+    productList: []
+};
+
 
 class DetailsContainer extends Component {
 
@@ -22,7 +37,7 @@ class DetailsContainer extends Component {
     }
 
     componentDidMount() {
-        //getIncidents(); 
+        this.state = initialState;
     }
 
     componentWillReceiveProps(nextProps) {
@@ -30,6 +45,11 @@ class DetailsContainer extends Component {
             product: nextProps.product
         })
     }
+
+    componentWillUnmount() {
+        store.dispatch(clearProduct());
+    }
+
     submitForm() {
         console.log("submit data");
     }
@@ -40,16 +60,17 @@ class DetailsContainer extends Component {
     }
 
     render() {
+
         return (
             <div>
-                <Details product={ this.props.product } onSubmitPress={this.submitForm.bind(this)} 
+                <Details {...this.state} product={ this.props.product } onSubmitPress={this.submitForm.bind(this)} 
                         onSendMessage={this.openSendMessageModal} />
                 <ModalContainer/>
             </div>
         )
     }
-
 }
+
 DetailsContainer.propTypes = {
     product: React.PropTypes.object
 }

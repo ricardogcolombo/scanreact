@@ -1,0 +1,29 @@
+@import 'colors.scss';
+@import 'fonts.scss';
+@import 'commons.scss';
+
+.ListHeader{
+    @include subTitle();
+}
+.List{
+    margin-top:30px;
+    padding-left:0px;
+    .ListItem{
+        width:97%;
+        background-color:$blue2;
+        border:1px solid $blue2;
+        @include inputText();
+        margin-top:2px;
+        margin-bottom:2px;
+        padding-top:20px;
+        padding-bottom:20px;
+
+        &:after{
+            @include iconText();
+            content:"\e9ad";
+            float:right;
+            margin-right:10px;
+            color:$blue1;
+        }
+    }
+}
