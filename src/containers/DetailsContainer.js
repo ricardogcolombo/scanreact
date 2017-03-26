@@ -10,7 +10,7 @@ import {
 import store from '../store'
 import Details from '../components/Details/Details';
 import ModalContainer from './ModalContainer';
-import {openMessageModal} from '../actions/modal-actions';
+import {openMessageModal, closeMessageModal} from '../actions/modal-actions';
 import '../styles/Details.css';
 
 // set initial state here
@@ -33,7 +33,8 @@ class DetailsContainer extends Component {
             product: null,
             productList:null
         }
-        this.openSendMessageModal= this.openSendMessageModal.bind(this);
+        this.openSendMessageModal = this.openSendMessageModal.bind(this);
+        this.onCloseModal = this.onCloseModal.bind(this);
     }
 
     componentDidMount() {
@@ -55,8 +56,18 @@ class DetailsContainer extends Component {
     }
 
     openSendMessageModal(){
-        console.log('helloou');
-        store.dispatch(openMessageModal()); 
+        var modalProps=  {
+            title: 'Enviar Mensaje',
+            inputs: ['Asunto'],
+            textAreaTitle: 'Descripcion',
+            submitButtonText: 'Enviar!',
+            onClosePress: this.onCloseModal
+        }
+        store.dispatch(openMessageModal(modalProps)); 
+    }
+
+    onCloseModal(){
+        store.dispatch(closeMessageModal()); 
     }
 
     render() {
@@ -64,7 +75,7 @@ class DetailsContainer extends Component {
         return (
             <div>
                 <Details {...this.state} product={ this.props.product } onSubmitPress={this.submitForm.bind(this)} 
-                        onSendMessage={this.openSendMessageModal} />
+                        onSendMessage={this.openSendMessageModal}/>
                 <ModalContainer/>
             </div>
         )

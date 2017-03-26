@@ -1,15 +1,17 @@
 import * as types from './modal-actions-types';
 
 
-export function openMessageModal() {
+export function openMessageModal(props) {
     return {
         type: types.SHOW_MODAL,
         modalType: 'MESSAGE_MODAL',
-        modalProps: {
-            title: 'Enviar Mensaje',
-            inputs: ['Asunto'],
-            textAreaTitle: 'Descripcion',
-            submitButtonText: 'Enviar!'
-        }
+        modalProps: {...props}
+    }
+}
+
+export function closeMessageModal() {
+    return {
+        type: types.CLOSE_MODAL,
+        modalType: 'MESSAGE_MODAL'
     }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button/Button';
 import '../styles/Modal.css';
 
-const ContentModal = ({title, inputTitle, textAreaTitle, submitButtonText, onSubmitPress}) =>{
+const ContentModal = ({title, inputTitle, textAreaTitle, submitButtonText, onSubmitPress, onClosePress}) =>{
    return(
     <div className='modal'>
         <div className='modal-form'> 
@@ -16,7 +16,7 @@ const ContentModal = ({title, inputTitle, textAreaTitle, submitButtonText, onSub
                 <textarea className='description' rows="4" cols="50" ></textarea>
         
                 <Button className='button submitButton' onClick={onSubmitPress} text={submitButtonText}/>
-                <Button className='button cancelButton' text='cancelar'/>
+                <Button className='button cancelButton' onClick={onClosePress} text='cancelar'/>
             </div> 
        </div>
        
