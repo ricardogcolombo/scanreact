@@ -1,0 +1,56 @@
+@import 'colors.scss';
+@import 'fonts.scss';
+@import 'commons.scss';
+
+
+$modal-background:$blue2;
+
+.modal {
+    background-color: rgba($modal-background,0.5);
+    position:fixed;
+    top:0; 
+    right:0; 
+    left:0; 
+    bottom:0;
+    .modal-form{
+        height: 60%;
+        margin: 30px;
+        padding: 10px;
+        background-color: white;
+
+        .title{
+            @include labels();
+            text-align:left;
+            margin-top:10px;
+            margin-bottom:10px;
+            color:$blue1;
+                   }
+        
+        .input{
+            @include inputText();
+            width:100%; 
+        }
+        
+        .description{
+            @include inputText();
+            resize:none;
+            width:100%;
+            >.value{
+                border:1px solid $blue2;
+                height:30px;
+            }
+        }
+
+        .button{
+            @extend .Button;
+            margin-top:5px;
+            background-color:$blue1;
+            width: 101%;
+        }
+
+        >.content{
+            padding:10px; 
+        }
+    }
+
+}

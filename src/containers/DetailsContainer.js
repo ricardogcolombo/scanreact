@@ -4,12 +4,13 @@ import React, {
 import {
     connect
 } from 'react-redux';
-
 import {
     clearProduct
 } from '../actions/products-actions';
 import store from '../store'
 import Details from '../components/Details/Details';
+import ModalContainer from './ModalContainer';
+import {openMessageModal, closeMessageModal} from '../actions/modal-actions';
 import '../styles/Details.css';
 
 // set initial state here
@@ -28,6 +29,15 @@ class DetailsContainer extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            product: null,
+            productList:null
+        }
+        this.openSendMessageModal = this.openSendMessageModal.bind(this);
+        this.onCloseModal = this.onCloseModal.bind(this);
+    }
+
+    componentDidMount() {
         this.state = initialState;
     }
 
@@ -45,10 +55,29 @@ class DetailsContainer extends Component {
         console.log("submit data");
     }
 
+    openSendMessageModal(){
+        var modalProps=  {
+            title: 'Enviar Mensaje',
+            inputs: ['Asunto'],
+            textAreaTitle: 'Descripcion',
+            submitButtonText: 'Enviar!',
+            onClosePress: this.onCloseModal
+        }
+        store.dispatch(openMessageModal(modalProps)); 
+    }
+
+    onCloseModal(){
+        store.dispatch(closeMessageModal()); 
+    }
+
     render() {
 
         return (
-            <Details {...this.state} onSubmitPress={this.submitForm.bind(this)} />
+            <div>
+                <Details {...this.state} product={ this.props.product } onSubmitPress={this.submitForm.bind(this)} 
+                        onSendMessage={this.openSendMessageModal}/>
+                <ModalContainer/>
+            </div>
         )
     }
 }

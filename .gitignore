@@ -6,5 +6,7 @@ src/styles/colors.css
 src/styles/commons.css
 src/styles/index.css
 src/styles/fonts.css
+hexascan-cordova
 src/styles/List.css
 src/components/LoadIndicator/LoadIndicator.css
+build
