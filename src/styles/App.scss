@@ -36,7 +36,8 @@
     }
     &__content{
         padding:5px;
-        padding-left: 15px;
+        padding-right: 10px;
+        padding-left: 10px;
         .label{
             @include labels();
             color:$blue1;
@@ -103,7 +104,7 @@
     }
 }
 //TODO: remove important
-// override load indicator styles 
+// override load indicator styles
 .sk-circle .sk-child:before {
     background-color:$blue3!important;
 }

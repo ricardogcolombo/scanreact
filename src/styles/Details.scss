@@ -21,25 +21,41 @@
         }
         overflow:hidden;
 
-        &__productImage img{
-            width: 25%;
-            display: block;
-            /* Portrait and Landscape */
-            @media only screen
-            and (min-device-width: 768px)
-            and (max-device-width: 1024px)
-            and (-webkit-min-device-pixel-ratio: 1) {
-                margin: 20px;
+        &__productImage {
+
+            .noImage{
+                left: 0;
+                width: 80px;
+                position: absolute;
                 margin-left: 50px;
-                float:left;
+                margin-top: 20px;
+                &:before{
+                    @include iconText();
+                    font-size:82px!important;
+                    color:$blue1;
+                    content:'\e90d';
+                }
             }
-            /* Portrait and Landscape */
-            @media only screen
-            and (min-device-width: 320px)
-            and (max-device-width: 767px)
-            and (-webkit-min-device-pixel-ratio: 2) {
-                width: 100px;
-                float: left;
+            img{
+                width: 25%;
+                display: block;
+                /* Portrait and Landscape */
+                @media only screen
+                and (min-device-width: 768px)
+                and (max-device-width: 1024px)
+                and (-webkit-min-device-pixel-ratio: 1) {
+                    margin: 20px;
+                    margin-left: 50px;
+                    float:left;
+                }
+                /* Portrait and Landscape */
+                @media only screen
+                and (min-device-width: 320px)
+                and (max-device-width: 767px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                    width: 90px;
+                    float: left;
+                }
             }
         }
         &__dataContainer{
@@ -157,10 +173,24 @@
             width: 101%;
         }
     }
+    &__submitButton{
+        @extend .Button;
+        margin-top:5px;
+        background-color:$blue1;
+        width: 95%;
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        margin-left: 10px;
+        margin-right: 30px;
+    }
     .dataRow{
         .Field{
             width:90px;
             display:inline-block;
+            .value{
+                text-align:left;
+            }
         }
     }
 }

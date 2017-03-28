@@ -9,13 +9,14 @@ const Details = ({
 }) => {
 
     // FIXME: remove this and check on detailscontainer the state
-    let imgSrc = (product.pic) ? 'data:image/jpeg;base64,' + product.pic : "";
+    let imgSrc = (product.IMAGEN) ? <img src={product.IMAGEN} />: <div className='noImage'></div>;
 
+                    
     return (
         <div className='Details'>
             <div className='Details__mainInfo'>
                 <div className='Details__mainInfo__productImage'>
-                    <img src='LA06.jpg'/>
+                    {imgSrc}
                 </div>
                 <div className='Details__mainInfo__dataContainer'>
                     <Field label='Codigo de Articulo' value={product.codart} />
@@ -44,7 +45,7 @@ const Details = ({
                 <Field label='ULTVTA' value={product.ULTVTA} />
                 <Field label='FECDISC' value={product.FECDISC} />
             </div>
-            <Button onClick={onSendMessage} text='Enviar mensaje' />
+            <Button className='Details__submitButton' onClick={onSendMessage} text='Contactar Repositor' />
 
         </div>
     )
